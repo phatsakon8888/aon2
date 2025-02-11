@@ -1,82 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine Video Player</title>
-    <style>
-        body {
-            background-color: #ffb6c1;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-            position: relative;
-        }
-        h1 {
-            color: #d63384;
-            margin-top: 20px;
-        }
-        .video-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        video {
-            width: 90%;
-            max-width: 400px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .heart {
-            position: absolute;
-            color: #ff4d6d;
-            font-size: 20px;
-            animation: floatUp 5s linear infinite;
-        }
-        @keyframes floatUp {
-            0% {
-                transform: translateY(100vh);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-10vh);
-                opacity: 0;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day Videos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      background-color: #f8bbd0; /* สีพื้นหลังชมพู */
+    }
+    h1 {
+      color: #e91e63;
+      font-size: 2.5em;
+      margin-top: 20px;
+    }
+    .video-container {
+      display: flex;
+      justify-content: space-around; /* จัดวางวีดีโอในแถว */
+      flex-wrap: wrap; /* ช่วยให้วีดีโอไม่ล้นออกจากหน้าจอในมือถือ */
+      margin-top: 20px;
+      padding: 10px;
+    }
+    .video-item {
+      flex: 1 1 30%; /* ปรับขนาดให้แต่ละวีดีโอมีขนาดไม่เกิน 30% */
+      margin: 10px;
+    }
+    iframe {
+      width: 100%; /* ทำให้ iframe ขยายเต็มขนาดของ container */
+      height: 200px; /* กำหนดความสูงของ iframe */
+      border-radius: 10px;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 1.2em;
+      color: #e91e63;
+    }
+  </style>
 </head>
 <body>
-    <h1>💖 Happy Valentine's Day 💖</h1>
-    <div class="video-container">
-        <video controls>
-            <source src="MicrosoftTeams-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video controls>
-            <source src="MicrosoftTeams-video (1).mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video controls>
-            <source src="MicrosoftTeams-video (2).mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+  <h1>Happy Valentine's Day!</h1>
+  
+  <div class="video-container">
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/mbVLntOceNc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    
-    <script>
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.classList.add("heart");
-            heart.innerHTML = "❤️";
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
-            document.body.appendChild(heart);
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }
-        setInterval(createHeart, 500);
-    </script>
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/BHmhfxXdzDs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/-GFqEidJXAw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <p>Enjoy the love and spread happiness! ❤️</p>
+  </div>
 </body>
 </html>
